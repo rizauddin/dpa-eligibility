@@ -1,0 +1,12 @@
+<h2>Details on the Suspected Offences</h2>
+<form [formGroup]="suspectedOffencesForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="offenceAttentionDate">Explain when the suspected offences first came to attention</label>
+    <textarea id="offenceAttentionDate" formControlName="offenceAttentionDate"></textarea>
+  </div>
+  <div>
+    <label for="internalInvestigation">Explain whether internal investigation has been conducted</label>
+    <textarea id="internalInvestigation" formControlName="internalInvestigation"></textarea>
+  </div>
+  <button type="submit">Next</button>
+</form>

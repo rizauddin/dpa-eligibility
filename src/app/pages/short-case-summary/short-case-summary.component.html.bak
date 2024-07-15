@@ -1,0 +1,20 @@
+<h2>Short Case Summary</h2>
+<form [formGroup]="caseSummaryForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="offenceDescription">Explain in broad terms the offence committed by the corporation/person</label>
+    <textarea id="offenceDescription" formControlName="offenceDescription"></textarea>
+  </div>
+  <div>
+    <label for="howCameToLight">Explain how the offence came to light</label>
+    <textarea id="howCameToLight" formControlName="howCameToLight"></textarea>
+  </div>
+  <div>
+    <label for="otherPersonsInvolved">Explain whether any other person are suspected to be involved</label>
+    <textarea id="otherPersonsInvolved" formControlName="otherPersonsInvolved"></textarea>
+  </div>
+  <div>
+    <label for="evidenceSources">Explain the sources of evidence of this offence</label>
+    <textarea id="evidenceSources" formControlName="evidenceSources"></textarea>
+  </div>
+  <button type="submit">Next</button>
+</form>

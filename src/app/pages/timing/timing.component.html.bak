@@ -1,0 +1,25 @@
+<h2>The suspected offences occur</h2>
+<form [formGroup]="timingForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      <input type="radio" formControlName="timing" value="1"> Before imminent threat of disclosure
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" formControlName="timing" value="2"> Before Government investigation
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" formControlName="timing" value="3"> Promptly after becoming aware of the offences
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" formControlName="timing" value="4"> Offences accrued for almost a year
+    </label>
+  </div>
+  <button type="submit">Next</button>
+</form>
+

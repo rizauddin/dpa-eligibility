@@ -1,0 +1,9 @@
+<h2>Undertaking Concerning Costs</h2>
+<form [formGroup]="undertakingCostsForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="costsDescription">Explain the undertaking concerning costs involved</label>
+    <textarea id="costsDescription" formControlName="costsDescription"></textarea>
+  </div>
+  <button type="submit">Next</button>
+</form>
+

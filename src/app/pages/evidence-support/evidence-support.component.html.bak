@@ -1,0 +1,8 @@
+<h2>Evidence to Support Suspected Offences</h2>
+<form [formGroup]="evidenceSupportForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="evidence">Upload evidence of suspected offences</label>
+    <textarea id="evidence" formControlName="evidence"></textarea>
+  </div>
+  <button type="submit">Next</button>
+</form>

@@ -1,0 +1,7 @@
+<h2>Summary of Your Entries</h2>
+<div *ngFor="let key of formData | keyvalue">
+  <h3>{{ isString(key.key) ? (key.key | titlecase) : key.key }}</h3>
+  <pre>{{ isString(key.value) ? (key.value | json) : key.value }}</pre>
+</div>
+<button (click)="printPage()">Print</button>
+

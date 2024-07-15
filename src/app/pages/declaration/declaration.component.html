@@ -1,0 +1,11 @@
+<h2>Declaration</h2>
+<form [formGroup]="declarationForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      <input type="checkbox" formControlName="declaration">
+      I hereby declare that information provided is true and correct
+    </label>
+  </div>
+  <button type="submit" [disabled]="!declarationForm.valid">Submit</button>
+</form>
+

@@ -1,0 +1,12 @@
+<h2>Undertaking Concerning Costs</h2>
+<form [formGroup]="undertakingCostsForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="costsDescription">Explain the undertaking concerning costs involved</label>
+    <textarea id="costsDescription" formControlName="costsDescription"></textarea>
+    <div *ngIf="undertakingCostsForm.controls['costsDescription'].invalid && (undertakingCostsForm.controls['costsDescription'].dirty || undertakingCostsForm.controls['costsDescription'].touched)">
+      <p style="color:red;">This field is required.</p>
+    </div>
+  </div>
+  <button type="submit" [disabled]="undertakingCostsForm.invalid">Next</button>
+</form>
+

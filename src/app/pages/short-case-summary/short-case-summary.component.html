@@ -1,0 +1,32 @@
+<h2>Short Case Summary</h2>
+<form [formGroup]="caseSummaryForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="offenceDescription">Explain in broad terms the offence committed by the corporation/person</label>
+    <textarea id="offenceDescription" formControlName="offenceDescription"></textarea>
+    <div *ngIf="caseSummaryForm.controls['offenceDescription'].invalid && (caseSummaryForm.controls['offenceDescription'].dirty || caseSummaryForm.controls['offenceDescription'].touched)">
+      <p style="color:red;">This field is required.</p>
+    </div>
+  </div>
+  <div>
+    <label for="howCameToLight">Explain how the offence came to light</label>
+    <textarea id="howCameToLight" formControlName="howCameToLight"></textarea>
+    <div *ngIf="caseSummaryForm.controls['howCameToLight'].invalid && (caseSummaryForm.controls['howCameToLight'].dirty || caseSummaryForm.controls['howCameToLight'].touched)">
+      <p style="color:red;">This field is required.</p>
+    </div>
+  </div>
+  <div>
+    <label for="otherPersonsInvolved">Explain whether any other person are suspected to be involved</label>
+    <textarea id="otherPersonsInvolved" formControlName="otherPersonsInvolved"></textarea>
+    <div *ngIf="caseSummaryForm.controls['otherPersonsInvolved'].invalid && (caseSummaryForm.controls['otherPersonsInvolved'].dirty || caseSummaryForm.controls['otherPersonsInvolved'].touched)">
+      <p style="color:red;">This field is required.</p>
+    </div>
+  </div>
+  <div>
+    <label for="evidenceSources">Explain the sources of evidence of this offence</label>
+    <textarea id="evidenceSources" formControlName="evidenceSources"></textarea>
+    <div *ngIf="caseSummaryForm.controls['evidenceSources'].invalid && (caseSummaryForm.controls['evidenceSources'].dirty || caseSummaryForm.controls['evidenceSources'].touched)">
+      <p style="color:red;">This field is required.</p>
+    </div>
+  </div>
+  <button type="submit" [disabled]="caseSummaryForm.invalid">Next</button>
+</form>

@@ -1,0 +1,19 @@
+<h2>Details on the Suspected Offences</h2>
+<form [formGroup]="suspectedOffencesForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="offenceAttentionDate">Explain when the suspected offences first came to attention</label>
+    <textarea id="offenceAttentionDate" formControlName="offenceAttentionDate"></textarea>
+    <div *ngIf="suspectedOffencesForm.controls['offenceAttentionDate'].invalid && (suspectedOffencesForm.controls['offenceAttentionDate'].dirty || suspectedOffencesForm.controls['offenceAttentionDate'].touched)">
+      <p style="color:red;">This field is required.</p>
+    </div>
+  </div>
+  <div>
+    <label for="internalInvestigation">Explain whether internal investigation has been conducted</label>
+    <textarea id="internalInvestigation" formControlName="internalInvestigation"></textarea>
+    <div *ngIf="suspectedOffencesForm.controls['internalInvestigation'].invalid && (suspectedOffencesForm.controls['internalInvestigation'].dirty || suspectedOffencesForm.controls['internalInvestigation'].touched)">
+      <p style="color:red;">This field is required.</p>
+    </div>
+  </div>
+  <button type="submit" [disabled]="suspectedOffencesForm.invalid">Next</button>
+</form>
+
