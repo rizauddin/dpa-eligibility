@@ -1,7 +1,15 @@
 <h2>Summary of Your Entries</h2>
-<div *ngFor="let key of formData | keyvalue">
-  <h3>{{ isString(key.key) ? (key.key | titlecase) : key.key }}</h3>
-  <pre>{{ isString(key.value) ? (key.value | json) : key.value }}</pre>
+<div *ngFor="let entry of formData | keyvalue">
+  <h3>{{ isString(entry.key) ? (entry.key | titlecase) : entry.key }}</h3>
+  <div *ngIf="isObject(entry.value); else showString">
+    <div *ngFor="let subEntry of asObject(entry.value) | keyvalue">
+      <strong>{{ isString(subEntry.key) ? (subEntry.key | titlecase) : subEntry.key }}:</strong> 
+      {{ isString(subEntry.value) ? subEntry.value : (subEntry.value | json) }}
+    </div>
+  </div>
+  <ng-template #showString>
+    <pre>{{ entry.value }}</pre>
+  </ng-template>
 </div>
 <button (click)="printPage()">Print</button>
 

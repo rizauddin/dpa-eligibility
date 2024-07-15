@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormDataService } from '../../form-data.service';
-import { CommonModule, KeyValuePipe, TitleCasePipe, JsonPipe } from '@angular/common'; // Import necessary pipes
+import { CommonModule } from '@angular/common';
+import { KeyValuePipe, TitleCasePipe, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-final-page',
@@ -15,11 +16,19 @@ export class FinalPageComponent implements OnInit {
   constructor(private formDataService: FormDataService) { }
 
   ngOnInit(): void {
-    this.formData = this.formDataService.getFormData() || {}; // Provide a fallback
+    this.formData = this.formDataService.getFormData() || {}; // Retrieve stored data
   }
 
   isString(value: any): value is string {
     return typeof value === 'string';
+  }
+
+  isObject(value: any): value is Record<string, any> {
+    return value && typeof value === 'object' && value.constructor === Object;
+  }
+
+  asObject(value: any): Record<string, any> {
+    return value as Record<string, any>;
   }
 
   printPage() {
